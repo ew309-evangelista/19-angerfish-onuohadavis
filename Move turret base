@@ -1,0 +1,27 @@
+#include "mbed.h"
+#include "stdio.h"
+#include "stdlib.h"
+#include "Motor.h"
+
+
+PwmOut LB(p22); //base speed
+DigitalOut pin(p21);//base direciton 0 or 1
+
+Serial pc(USBTX, USBRX);
+
+int rote;
+
+int main() {
+    while(1){
+         LB = 0.5;// speed of base spinning
+         pin = 1;//direction of base spinning 
+         wait(2.0);
+         LB  = 0;
+         wait(5.0);
+         LB = 0.5;
+         pin = 0;
+         wait(2.0);  
+        
+    }
+    
+}
